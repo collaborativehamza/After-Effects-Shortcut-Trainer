@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>After Effects Shortcut Trainer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#efeefa;--pn:#fff;--tx:#1d1a33;--mu:#68648a;--bd:#d9d6ee;--ac:#5b3fe0;--ac2:#fff;--ok:#12864f;--bad:#d4303a;--kc:#f4f3fd}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17161f;--pn:#232230;--tx:#eceaf8;--mu:#9d9abf;--bd:#35334a;--ac:#9c9cff;--ac2:#17161f;--ok:#43d38e;--bad:#ff737b;--kc:#2f2d44}}
+:root[data-theme="dark"]{--bg:#17161f;--pn:#232230;--tx:#eceaf8;--mu:#9d9abf;--bd:#35334a;--ac:#9c9cff;--ac2:#17161f;--ok:#43d38e;--bad:#ff737b;--kc:#2f2d44}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 'Bricolage Grotesque',system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:clamp(28px,6vw,46px);line-height:1.05;margin:6px 0 8px;font-weight:800;letter-spacing:-.02em}
+h2{font-size:20px;margin:28px 0 10px}h2 small{color:var(--mu);font-weight:400;font-size:14px;margin-left:6px}
+h3{font-size:clamp(20px,4vw,28px);margin:10px 0 16px;line-height:1.25}
+.mu{color:var(--mu)}p{margin:6px 0}
+button,select,input[type=search]{font:inherit;color:var(--tx)}
+button{cursor:pointer}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tl{position:relative;height:34px;margin:14px 0 4px;border-bottom:2px solid var(--bd);background:repeating-linear-gradient(90deg,var(--bd) 0 1px,transparent 1px 5%);background-size:100% 10px;background-repeat:repeat-x;background-position:bottom}
+.ph{position:absolute;left:0;top:0;bottom:-2px;width:2px;background:var(--ac);transition:left .4s}
+.ph:before{content:"";position:absolute;top:0;left:-7px;border:8px solid transparent;border-top:12px solid var(--ac);border-bottom:0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tabs button,.chip,.sm{border:1px solid var(--bd);background:var(--pn);border-radius:20px;padding:7px 15px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.tabs .on,.chip.on{background:var(--ac);color:var(--ac2);border-color:var(--ac);font-weight:600}
+.chip{padding:5px 12px;font-size:14px}
+input[type=search],select{border:1px solid var(--bd);background:var(--pn);border-radius:10px;padding:8px 12px}
+input[type=search]{flex:1;min-width:160px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.card{background:var(--pn);border:1px solid var(--bd);border-left:5px solid var(--bd);border-radius:6px;padding:12px 14px}
+.card.ok{border-left-color:var(--ok)}
+.card label{font-size:13px;color:var(--mu);cursor:pointer}
+.tag{font-size:13px;font-weight:600}.l1{color:var(--ok)}.l2{color:var(--ac)}.l3{color:var(--bad)}
+.keys{margin:10px 0 6px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:42px}
+.keys.cover{filter:blur(8px);cursor:pointer}.keys.cover:hover,.keys.cover.show{filter:none}
+kbd{display:inline-block;min-width:38px;text-align:center;font:700 16px 'Bricolage Grotesque',system-ui,sans-serif;background:var(--kc);border:1px solid var(--bd);border-bottom-width:4px;border-radius:8px;padding:5px 10px}
+i{font-style:normal;color:var(--mu);font-size:13px;margin:0 2px}
+.card p{font-size:15px}
+.box{background:var(--pn);border:1px solid var(--bd);border-radius:10px;padding:18px;min-height:260px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.opts button{background:var(--kc);border:2px solid var(--bd);border-radius:10px;padding:14px;text-align:left;min-height:62px}
+.opts button:hover:not(:disabled){border-color:var(--ac)}
+.opts .r,.t.r{border-color:var(--ok)!important;background:color-mix(in srgb,var(--ok) 22%,var(--pn))!important}
+.opts .w,.t.w{border-color:var(--bad)!important;background:color-mix(in srgb,var(--bad) 22%,var(--pn))!important}
+.go{background:var(--ac);color:var(--ac2);border:0;border-radius:10px;padding:10px 20px;font-weight:600}
+.big{font-size:clamp(34px,8vw,60px);font-weight:800;line-height:1}
+.mt{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.t{min-height:76px;background:var(--kc);border:2px solid var(--bd);border-radius:10px;padding:8px;font-size:14px;display:flex;flex-wrap:wrap;gap:3px;align-items:center;justify-content:center;text-align:center}
+.t.s{border-color:var(--ac)}.t.d{opacity:.4;pointer-events:none}
+.shake{animation:sh .3s}@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+@media(prefers-reduced-motion:reduce){.shake{animation:none}.ph{transition:none}}
+.miss{margin-top:12px;display:grid;gap:6px}.miss div{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+[hidden]{display:none!important}
+</style></head><body><main>
+<div class="top"><div><h1>After Effects shortcut trainer</h1><p class="mu">Learn on the web, no project open. Built from the School of Motion shortcut video, sorted by area, then extended with bonus time-savers.</p></div></div>
+<div class="tl" aria-label="Progress"><div class="ph" id="ph"></div></div>
+<p class="mu" id="pg"></p>
+<div class="bar"><button class="sm" id="plat"></button><label class="mu">Game pool <select id="pool"><option value="all">All shortcuts</option><option value="core">Video shortcuts</option><option value="bonus">Bonus only</option><option value="new">Not learned yet</option></select></label></div>
+<div class="tabs" id="tabs"><button data-t="learn" class="on">Learn</button><button data-t="bonus">Bonus</button><button data-t="quiz">Quiz</button><button data-t="drill">Key drill</button><button data-t="match">Match</button></div>
+
+<section id="p-learn"><div id="lb">
+<div class="bar"><input type="search" id="q" placeholder="Search by action or key" aria-label="Search"><button class="sm" id="cov">Cover keys</button></div>
+<div class="bar" id="lv"><button class="chip on" data-l="0">All levels</button><button class="chip" data-l="1">Beginner</button><button class="chip" data-l="2">Advanced</button><button class="chip" data-l="3">Ninja</button></div>
+<div class="bar" id="chips"></div></div>
+<div id="list"></div>
+<p class="mu">Tip: turn on Cover keys, read the action, say the shortcut out loud, then hover or tap to check.</p></section>
+
+<section id="p-quiz" hidden><div class="bar"><select id="qdir"><option value="fwd">Action → pick the keys</option><option value="rev">Keys → pick the action</option></select><button class="go" id="qgo">Start 10-question quiz</button></div><div class="box" id="qbox"><p class="mu">Right answers build a streak and earn bonus points.</p></div></section>
+
+<section id="p-drill" hidden><div class="bar"><button class="go" id="dgo">Start 60-second drill</button></div><div class="box" id="dbox"><p class="mu">You see an action and press the real keys on your keyboard. Browser-reserved combos are left out. If your browser grabs a combo, use Skip.</p></div></section>
+
+<section id="p-match" hidden><div class="bar"><button class="go" id="mgo">New board</button></div><div class="box" id="mbox"><p class="mu">Flip two tiles to pair each action with its keys.</p></div></section>
+</main>
+<script>
+const R=[
+['T',1,'A','Show Anchor Point',1],['T',1,'P','Show Position',1],['T',1,'S','Show Scale',1],['T',1,'R','Show Rotation',1],['T',1,'T','Show Opacity',1],
+['T',1,'Shift+S','Add another property to the view: show one (P), then hold Shift with another (S)',1],
+['T',1,'U','Reveal all keyframed properties of the selected layers',1],
+['T',2,'U U','Reveal every property you have changed (double-tap U)',0],
+['T',3,'Mod+Alt+Home','Snap the anchor point to the centre of the layer',1],
+['T',3,'Alt+Left','Type: tighten kerning with the cursor between letters (Alt+Right loosens)',1],
+['K',1,'Alt+Shift+P','Add a Position keyframe at the playhead (swap P for A, S, R or T)',1],
+['K',1,'F9','Easy Ease the selected keyframes',1],
+['K',2,'Shift+F9','Easy Ease In only',1],
+['K',2,'Mod+Shift+F9','Easy Ease Out only',1],
+['K',1,'J','Jump to the previous keyframe',1],['K',1,'K','Jump to the next keyframe',1],
+['K',2,'Alt+Drag','Alt-drag the end keyframe of a selection to space keyframes proportionally',0],
+['N',1,'Space','Hold for the Hand tool to pan the viewer and timeline',1],
+['N',1,'Plus','Zoom the timeline in (minus zooms out)',0],
+['N',1,'I','Go to the layer in point',1],['N',1,'O','Go to the layer out point',1],
+['N',1,'PageDown','Step forward one frame (Page Up steps back)',1],
+['N',1,'Home','Jump to the first frame (End jumps to the last)',1],
+['N',2,'[','Move the layer so it starts at the playhead',1],['N',2,']','Move the layer so it ends at the playhead',1],
+['N',2,'Num*','Add a marker at the playhead, ideal for timing to music',0],
+['N',2,'Alt+Num*','Add a marker with a comment box',0],
+['N',3,'Mod+Up','Select the layer above (Mod+Down selects below)',1],
+['N',3,'Mod+F','Jump to the timeline search bar',0],
+['V',1,'.','Zoom the comp viewer in (comma zooms out)',1],
+['V',2,'Shift+/','Fit the comp to the panel',1],
+['V',1,'Num0','RAM preview the comp',0],
+['V',2,'Shift+Num0','RAM preview skipping every other frame, halving preview time',0],
+['V',2,'Mod+J','Full resolution',0],['V',2,'Mod+Shift+J','Half resolution',0],['V',3,'Mod+Alt+Shift+J','Quarter resolution',1],
+['V',3,'`','Maximise the panel under your mouse (also works in Premiere Pro)',1],
+['V',3,'Mod+Shift+H','Hide or show layer controls',0],
+['V',3,'Shift+F3','Open the Graph Editor',1],
+['G',1,'Mod+R','Show or hide rulers, then drag from them to make guides',0],
+['G',2,'Mod+;','Show or hide guides',1],['G',2,'Mod+Shift+;','Turn guide snapping on or off',1],
+['G',3,'Mod+Alt+Shift+;','Lock or unlock guides',1],
+['G',2,"Mod+'",'Show or hide the grid',1],
+['L',2,'Mod+Shift+C','Pre-compose the selected layers',0],
+['L',2,'Mod+Shift+D','Split the layer at the playhead',1],
+['L',2,'Mod+Alt+F','Fit layer to comp, stretching it to fill the frame',1],
+['L',3,'Mod+Alt+Shift+H','Fit layer to comp width',1],['L',3,'Mod+Alt+Shift+G','Fit layer to comp height',1],
+['L',3,'Alt+Drag','Alt-drag a Project item onto a layer to replace it',0],
+['X',3,'Mod+Alt+S','Send the current frame to the render queue for a quick still',1],
+['B',1,'B','Set work area start at the playhead',1],['B',1,'N','Set work area end at the playhead',1],
+['B',2,'Alt+[','Trim the layer in point to the playhead',1],['B',2,'Alt+]','Trim the layer out point to the playhead',1],
+['B',1,'Mod+D','Duplicate the selected layer',1],['B',1,'Mod+K','Open Composition Settings',1],
+['B',1,'Mod+Y','New solid layer',0],['B',2,'Mod+Alt+Y','New adjustment layer',1],
+['B',1,'E','Show effects on the selected layer',1],['B',1,'M','Show mask path (M M shows all mask properties)',1],
+['B',1,'L','Show audio levels (L L shows the waveform)',1],
+['B',3,'E E','Show expressions on the selected layer',0],
+['B',2,'F2','Deselect all layers',1],['B',2,';','Toggle the timeline zoom to single-frame level',1],
+['B',1,'Mod+M','Add the comp to the Render Queue',0],['B',2,'Alt+Click','Alt-click a property stopwatch to add an expression',0]];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let mac=/Mac|iPhone|iPad/.test(navigator.platform||navigator.userAgent),tab='learn',f={q:'',c:'all',l:0,cover:false};
+const ST={get(k,d){try{const v=localStorage.getItem('aek_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('aek_'+k,JSON.stringify(v))}catch(e){}}};
+let learned=new Set(ST.get('learned',[]));
+const CN={T:'Transform and properties',K:'Keyframes',N:'Navigation and timeline',V:'Viewer and preview',G:'Guides and grid',L:'Layers and comps',X:'Render and misc',B:'Bonus time-savers'};
+const LV={1:'Beginner',2:'Advanced',3:'Ninja'};
+const E=R.map((r,i)=>({id:i,c:r[0],l:r[1],k:r[2],d:r[3],dr:r[4]}));
+const SY={Mod:()=>mac?'⌘':'Ctrl',Alt:()=>mac?'⌥':'Alt',Shift:()=>mac?'⇧':'Shift',Up:'↑',Down:'↓',Left:'←',Right:'→',Plus:'+',PageUp:'Page Up',PageDown:'Page Down',Num0:'Num 0','Num*':'Num *',Drag:'Drag',Click:'Click'};
+const sym=t=>{const v=SY[t];return typeof v==='function'?v():v||t};
+const kb=k=>k.split(' ').map(s=>s.split('+').map(t=>`<kbd>${sym(t)}</kbd>`).join('<i>+</i>')).join('<i>then</i>');
+const kt=k=>k.split(' ').map(s=>s.split('+').map(sym).join(' + ')).join(' then ');
+const sd=d=>d.split(/ \(|, | — /)[0].replace(/:.*$/,m=>m);
+const sh=a=>[...a].sort(()=>Math.random()-.5);
+function pool(dr){const p=$('#pool').value;let a=E.filter(e=>p=='core'?e.c!='B':p=='bonus'?e.c=='B':p=='new'?!learned.has(e.id):true);return dr?a.filter(e=>e.dr):a}
+function prog(){const n=learned.size;$('#pg').textContent=`${n} of ${E.length} shortcuts marked as learned`;$('#ph').style.left=(n/E.length*100)+'%'}
+const card=e=>`<div class="card ${learned.has(e.id)?'ok':''}" data-id="${e.id}"><div class="top"><span class="tag l${e.l}">${LV[e.l]}</span><label><input type="checkbox" ${learned.has(e.id)?'checked':''}> learned</label></div><div class="keys ${f.cover?'cover':''}">${kb(e.k)}</div><p>${e.d}</p></div>`;
+function renderList(){const bonus=tab=='bonus',cats=bonus?['B']:Object.keys(CN).filter(c=>c!='B');
+const a=E.filter(e=>(e.c=='B')==bonus&&(f.c=='all'||e.c==f.c)&&(!f.l||e.l==f.l)&&(!f.q||(e.d+' '+kt(e.k)).toLowerCase().includes(f.q)));
+$('#chips').innerHTML=bonus?'':['all',...cats].map(c=>`<button class="chip ${f.c==c?'on':''}" data-c="${c}">${c=='all'?'All areas':CN[c]}</button>`).join('');
+$('#list').innerHTML=cats.map(c=>{const g=a.filter(e=>e.c==c);return g.length?`<h2>${CN[c]}<small>${g.length}</small></h2><div class="grid">${g.map(card).join('')}</div>`:''}).join('')||'<p class="mu">No matches. Clear the search or filters.</p>';prog()}
+function showTab(t){tab=t;f.c='all';$$('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t==t));
+['learn','quiz','drill','match'].forEach(p=>$('#p-'+p).hidden=!(p==t||(p=='learn'&&t=='bonus')));
+$('#lb').hidden=t=='bonus';if(t=='learn'||t=='bonus')renderList();if(t!='drill'&&Dr){clearInterval(Dr.iv);Dr.on=false}}
+$('#tabs').onclick=e=>{if(e.target.dataset.t)showTab(e.target.dataset.t)};
+$('#plat').onclick=()=>{mac=!mac;plat();if(tab=='learn'||tab=='bonus')renderList()};
+const plat=()=>$('#plat').textContent=mac?'Showing Mac keys, switch to Windows':'Showing Windows keys, switch to Mac';
+$('#q').oninput=e=>{f.q=e.target.value.toLowerCase();renderList()};
+$('#cov').onclick=e=>{f.cover=!f.cover;e.target.textContent=f.cover?'Show keys':'Cover keys';renderList()};
+$('#lv').onclick=e=>{if(e.target.dataset.l===undefined)return;f.l=+e.target.dataset.l;$$('#lv .chip').forEach(b=>b.classList.toggle('on',b==e.target));renderList()};
+$('#chips').onclick=e=>{if(e.target.dataset.c){f.c=e.target.dataset.c;renderList()}};
+$('#list').onclick=e=>{const k=e.target.closest('.keys.cover');if(k)k.classList.toggle('show')};
+$('#list').onchange=e=>{const c=e.target.closest('.card');if(!c)return;const id=+c.dataset.id;e.target.checked?learned.add(id):learned.delete(id);c.classList.toggle('ok',e.target.checked);ST.set('learned',[...learned]);prog()};
+/* Quiz */
+let Q;
+$('#qgo').onclick=()=>{const p=pool();if(p.length<4){$('#qbox').innerHTML='<p>This pool has fewer than 4 shortcuts. Pick a bigger pool.</p>';return}Q={list:sh(p).slice(0,10),i:0,s:0,st:0,miss:[],rev:$('#qdir').value=='rev'};qShow()};
+function qShow(){if(Q.i>=Q.list.length)return qEnd();const e=Q.list[Q.i];Q.cur=e;Q.lock=false;
+const o=sh([e,...sh(E.filter(x=>x.id!=e.id&&(Q.rev?sd(x.d)!=sd(e.d):kt(x.k)!=kt(e.k)))).slice(0,3)]);
+$('#qbox').innerHTML=`<p class="mu">Question ${Q.i+1} of ${Q.list.length}. Score ${Q.s}. Streak ${Q.st}.</p><h3>${Q.rev?kb(e.k):sd(e.d)}</h3><div class="opts">${o.map(x=>`<button data-id="${x.id}">${Q.rev?sd(x.d):kb(x.k)}</button>`).join('')}</div>`}
+$('#qbox').onclick=e=>{const b=e.target.closest('.opts button');if(b&&Q&&!Q.lock){Q.lock=true;const ok=+b.dataset.id==Q.cur.id;b.classList.add(ok?'r':'w');if(ok){Q.st++;Q.s+=10+Q.st*2}else{Q.st=0;Q.miss.push(Q.cur);$$('#qbox .opts button').forEach(x=>{if(+x.dataset.id==Q.cur.id)x.classList.add('r')})}
+setTimeout(()=>{Q.i++;qShow()},ok?700:1600)}
+if(e.target.id=='qagain')$('#qgo').click()};
+function qEnd(){const b=Math.max(ST.get('qbest',0),Q.s);ST.set('qbest',b);$('#qbox').innerHTML=`<div class="big">${Q.s}</div><p>Best score ${b}. You missed ${Q.miss.length} of ${Q.list.length}.</p>${Q.miss.length?`<div class="miss">${Q.miss.map(e=>`<div>${kb(e.k)}<span>${sd(e.d)}</span></div>`).join('')}</div>`:'<p>Perfect run.</p>'}<p><button class="go" id="qagain">Play again</button></p>`}
+/* Drill */
+let Dr;const CM={Comma:',',Period:'.',Slash:'/',Semicolon:';',Quote:"'",Backquote:'`',BracketLeft:'[',BracketRight:']',Space:'Space',ArrowUp:'Up',ArrowDown:'Down',ArrowLeft:'Left',ArrowRight:'Right',PageUp:'PageUp',PageDown:'PageDown',Home:'Home',End:'End'};
+const tok=e=>/^Key[A-Z]$/.test(e.code)?e.code[3]:/^F\d+$/.test(e.code)?e.code:CM[e.code]||null;
+$('#dgo').onclick=()=>{const p=pool(1);if(Dr)clearInterval(Dr.iv);if(p.length<3){$('#dbox').innerHTML='<p>Not enough drillable shortcuts in this pool.</p>';return}
+Dr={list:sh(p),i:0,s:0,w:0,t:60,on:true,hint:false};Dr.cur=Dr.list[0];Dr.iv=setInterval(()=>{if(--Dr.t<=0)dEnd();else dShow()},1000);dShow()};
+function dShow(){$('#dbox').innerHTML=`<p class="mu">Time ${Dr.t}s. Correct ${Dr.s}. Misses ${Dr.w}.</p><h3 id="dq">${sd(Dr.cur.d)}</h3><div class="keys">${Dr.hint?kb(Dr.cur.k):'<span class="mu">Press the shortcut now</span>'}</div><p><button class="sm" id="dh">Hint</button> <button class="sm" id="ds">Skip</button></p>`}
+function dNext(){Dr.i++;Dr.cur=Dr.list[Dr.i%Dr.list.length];Dr.hint=false;dShow()}
+$('#dbox').onclick=e=>{if(!Dr||!Dr.on)return;if(e.target.id=='dh'){Dr.hint=true;dShow()}if(e.target.id=='ds')dNext()};
+function dEnd(){clearInterval(Dr.iv);Dr.on=false;const b=Math.max(ST.get('dbest',0),Dr.s);ST.set('dbest',b);$('#dbox').innerHTML=`<div class="big">${Dr.s}</div><p>shortcuts in 60 seconds. Best ${b}. Misses ${Dr.w}.</p>`}
+document.addEventListener('keydown',ev=>{if(!Dr||!Dr.on||tab!='drill')return;if(['Shift','Control','Alt','Meta'].includes(ev.key))return;ev.preventDefault();const t=tok(ev);if(!t)return;
+const p=Dr.cur.k.split('+'),m=p[p.length-1],h=mac?ev.metaKey:ev.ctrlKey;
+if(t==m&&p.includes('Mod')==h&&p.includes('Shift')==ev.shiftKey&&p.includes('Alt')==ev.altKey){Dr.s++;dNext()}else{Dr.w++;dShow();const q=$('#dq');if(q){q.classList.add('shake')}}});
+/* Match */
+let M;
+$('#mgo').onclick=()=>{const p=sh(pool()).slice(0,6);if(p.length<2){$('#mbox').innerHTML='<p>Pick a bigger pool.</p>';return}
+M={t:sh(p.flatMap(e=>[{id:e.id,a:1,h:sd(e.d)},{id:e.id,a:0,h:kb(e.k)}])),sel:null,d:new Set(),mv:0,lock:false};mDraw()};
+function mDraw(bad){const win=M.d.size==M.t.length;$('#mbox').innerHTML=`<p class="mu">Moves ${M.mv}. Pairs ${M.d.size/2} of ${M.t.length/2}.${win?' Board cleared.':''}</p><div class="mt">${M.t.map((x,i)=>`<button class="t ${M.d.has(i)?'d r':''} ${M.sel===i?'s':''} ${bad&&bad.includes(i)?'w':''}" data-i="${i}">${x.h}</button>`).join('')}</div>`}
+$('#mbox').onclick=e=>{const b=e.target.closest('.t');if(!b||!M||M.lock)return;const i=+b.dataset.i;if(M.sel===i)return;
+if(M.sel===null){M.sel=i;return mDraw()}const j=M.sel;M.sel=null;M.mv++;
+if(M.t[i].id==M.t[j].id){M.d.add(i);M.d.add(j);mDraw()}else{M.lock=true;mDraw([i,j]);setTimeout(()=>{M.lock=false;mDraw()},750)}};
+plat();showTab('learn');
+</script></body></html>
